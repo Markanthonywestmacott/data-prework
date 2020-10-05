@@ -1,0 +1,47 @@
+#BONUS.1
+#Calculamos primero el avance neto de cada dia
+
+avance = [30, 21, 33, 77, 44, 45, 23, 45, 12, 34, 55]
+retroceso = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+
+diferencia = []
+
+zip_object = zip(avance, retroceso)
+for avance_i, retroceso_i in zip_object:
+    diferencia.append(avance_i-retroceso_i)
+print(diferencia)
+
+#El avance neto es [10, 1, 13, 57, 24, 25, 3, 25, -8, 14, 35]. 
+#Con esta lista, calculamos en que 'index' el sumatorio alcanza 125 usando un for loop. 
+
+net_gain = [10, 1, 13, 57, 24, 25, 3, 25, -8, 14, 35]
+total_cm = 0
+days_elapsed = 0 
+
+for i in net_gain:
+        total_cm += i
+        days_elapsed += 1
+        if (total_cm < 125)
+            print ("in day", days_elapsed, "he reached", total_cm)
+        else:
+            print("the snail made it out on day", days_elapsed) 
+
+#Solucion: the snail made it out on day 6    
+
+#BONUS.2
+#Sabemos que el caracol salio en el dia 6, asi que acotamos la lista 'avance' a 6 y calculamos el maximo. 
+
+avance = [30, 21, 33, 77, 44, 45, 23, 45, 12, 34, 55]
+escape_time = avance[:6]
+max(escape_time)
+
+#Solucion: 77
+
+#BONUS.3
+#Para la media, teneniendo en cuenta retrocesos nocturnos, usamos la lista 'net_gain'
+
+net_gain = [10, 1, 13, 57, 24, 25, 3, 25, -8, 14, 35]
+escape_time = net_gain[:6]
+sum(escape_time)/len(escape_time)
+
+#Solucion: 21.666666
