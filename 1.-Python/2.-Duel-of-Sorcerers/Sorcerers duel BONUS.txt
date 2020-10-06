@@ -1,0 +1,71 @@
+#BONUS Duel of sorcerers
+#TASK 1, 2  
+
+POWER = {
+    'Fireball': 50, 
+    'Lightning bolt': 40, 
+    'Magic arrow': 10, 
+    'Black Tentacles': 25, 
+    'Contagion': 45
+}
+
+gandalf = ['Fireball', 'Lightning bolt', 'Lightning bolt', 'Magic arrow', 'Fireball', 
+           'Magic arrow', 'Lightning bolt', 'Fireball', 'Fireball', 'Fireball']
+saruman = ['Contagion', 'Contagion', 'Black Tentacles', 'Fireball', 'Black Tentacles', 
+           'Lightning bolt', 'Magic arrow', 'Contagion', 'Magic arrow', 'Magic arrow']
+spells = 0
+
+saruman_wins = 0
+gandalf_wins = 0
+
+#TASK 3
+
+saruman_power = []
+gandalf_power = []
+
+for i in gandalf:
+    gandalf_power.append(POWER[i])
+for i in saruman: 
+    saruman_power.append(POWER[i])
+    
+#TASK 4
+    
+while gandalf_wins != 3 and saruman_wins != 3:    
+    if gandalf_power[spells] > saruman_power[spells]:
+        gandalf_wins += 1
+        while gandalf_wins in [1,2]:
+            spells += 1
+            if gandalf_power[spells] > saruman_power[spells]:
+                gandalf_wins += 1
+            else:
+                gandalf_wins = 0
+    elif gandalf_power[spells] < saruman_power[spells]:
+        saruman_wins += 1
+        while saruman_wins in [1,2]:
+            spells += 1
+            if gandalf_power[spells] < saruman_power[spells]:
+                saruman_wins += 1
+            else:
+                saruman_wins = 0        
+
+if gandalf_wins > saruman_wins:
+    print("gandalf_wins")
+else:
+    print("saruman wins")
+
+    #solution: gandalf wins
+
+#TASK 5
+
+sum(gandalf_power)/len(gandalf_power)
+sum(saruman_power)/len(saruman_power)
+
+    #solution: 39 & 30.5
+    
+#TASK 6
+
+import statistics
+std_gandalf = statistics.stdev(gandalf_power)
+std_saruman = statistics.stdev(gandalf_power)
+
+    #solution: 15.95 & 16.40
