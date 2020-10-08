@@ -1,0 +1,101 @@
+#DUEL OF SORCERERS
+
+#1. Create variables gandalf, saruman and assign them the spell power lists. Create a variable called spells.
+
+gandalf = [10, 11, 13, 30, 22, 11, 10, 33, 22, 22]
+saruman = [23, 66, 12, 43, 12, 10, 44, 23, 12, 17]
+spells_casted = 0
+
+#2. Create two variables called gandalf_wins and saruman_wins. Set both of them to 0.
+
+gandalf_wins = 0
+saruman_wins = 0
+
+#3. Using the lists of spells of both sorcerers, update variables gandalf_wins and saruman_wins to count wins.
+
+for a, b in zip(gandalf,saruman):
+    if a > b:
+        gandalf_wins +=1
+    if b > a: 
+        saruman wins +=1
+        
+#4. Who won the battle?
+
+print("Gandalf: ", gandalf_wins,". Saruman: ", saruman_wins)
+
+    #Solution: Gandalf wins 6 to 4
+    
+#BONUS
+
+#1. Create variables POWER, gandalf and saruman as seen above. Create a variable called spells
+
+POWER = {
+    'Fireball': 50, 
+    'Lightning bolt': 40, 
+    'Magic arrow': 10, 
+    'Black Tentacles': 25, 
+    'Contagion': 45
+}
+
+gandalf = ['Fireball', 'Lightning bolt', 'Lightning bolt', 'Magic arrow', 'Fireball', 
+           'Magic arrow', 'Lightning bolt', 'Fireball', 'Fireball', 'Fireball']
+saruman = ['Contagion', 'Contagion', 'Black Tentacles', 'Fireball', 'Black Tentacles', 
+           'Lightning bolt', 'Magic arrow', 'Contagion', 'Magic arrow', 'Magic arrow']
+spells = 0
+
+#2. Create two variables called gandalf_wins and saruman_wins. Set both of them to 0.
+
+saruman_wins = 0
+gandalf_wins = 0
+
+#3. Create two variables called gandalf_power and saruman_power to store the list of spell powers of each sorcerer.
+
+saruman_power = []
+gandalf_power = []
+
+for i in gandalf:
+    gandalf_power.append(POWER[i])
+for i in saruman: 
+    saruman_power.append(POWER[i])
+    
+#4. Code the execution of spell clashes. Remember that a sorcerer wins if he succeeds in winning 3 times in a row
+    
+while gandalf_wins != 3 and saruman_wins != 3:    
+    if gandalf_power[spells] > saruman_power[spells]:
+        gandalf_wins += 1
+        while gandalf_wins in [1,2]:
+            spells += 1
+            if gandalf_power[spells] > saruman_power[spells]:
+                gandalf_wins += 1
+            else:
+                gandalf_wins = 0
+    elif gandalf_power[spells] < saruman_power[spells]:
+        saruman_wins += 1
+        while saruman_wins in [1,2]:
+            spells += 1
+            if gandalf_power[spells] < saruman_power[spells]:
+                saruman_wins += 1
+            else:
+                saruman_wins = 0        
+
+if gandalf_wins > saruman_wins:
+    print("gandalf_wins")
+else:
+    print("saruman wins")
+
+    #Solution: gandalf wins
+
+#5. Find the average spell power of Gandalf and Saruman.
+
+sum(gandalf_power)/len(gandalf_power)
+sum(saruman_power)/len(saruman_power)
+
+    #solution: 39 & 30.5
+    
+#6. Find the standard deviation of the spell power of Gandalf and Saruman.
+
+import statistics
+std_gandalf = statistics.stdev(gandalf_power)
+std_saruman = statistics.stdev(gandalf_power)
+
+    #solution: 15.95 & 16.40
