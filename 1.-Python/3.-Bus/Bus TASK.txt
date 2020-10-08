@@ -1,0 +1,43 @@
+#BUS
+
+stops = [(10, 0), (4, 1), (3, 5), (3, 4), (5, 1), (1, 5), (5, 8), (4, 6), (2, 3)]
+
+#1. Calculate the number of stops.
+
+len(stops)
+
+        #Solution: 8
+
+#2. Assign to a variable a list whose elements are the number of passengers at each stop (in-out).
+
+passenger_count = []
+
+for a, b in stops:
+    passenger_count.append(a-b)
+    
+passenger_count = [10, 3, -1, 4, -4, -3, -2, -1]
+passenger_total = []
+total = 0
+
+for n in passenger_count:
+    running_total.append(total)
+    total += n
+
+print(running_total)
+
+    #Solution: [0, 10, 13, 12, 16, 12, 9, 7]
+    
+#3. Find the maximum occupation of the bus.
+
+print(max(running_total))
+
+    #Solution: 16  
+
+#4. Calculate the average occupation. And the standard deviation.
+
+avg = sum(running_total)/len(running_total)
+
+import statistics
+std_passenger = statistics.stdev(running_total)
+    
+    #Solutions: avg = 9.875, std_passenger = 4,82
