@@ -1,0 +1,70 @@
+#SNAIL AND THE WELL
+
+#1. Assign the challenge data to variables with representative names
+
+day_gain = 30
+night_loss = 20
+position = 0
+
+#2. Create a variable days to keep count of the days that pass until the snail escapes the well.
+
+days = 0 
+
+#3. Find the solution to the challenge using the variables defined above.
+
+while position < wall_height:
+    day_count += 1
+    position += day_gain - night_loss
+    
+#4. Print the solution.
+
+print("It takes the snail", days, "to get out of the well")
+
+    #Solution: 13 days
+    
+#BONUS
+
+#1. How many days does it take for the snail to escape the well?
+
+avance = [30, 21, 33, 77, 44, 45, 23, 45, 12, 34, 55]
+retroceso = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+
+diferencia = []
+
+zip_object = zip(avance, retroceso)
+for avance_i, retroceso_i in zip_object:
+    diferencia.append(avance_i-retroceso_i)
+print(diferencia)
+
+net_gain = [10, 1, 13, 57, 24, 25, 3, 25, -8, 14, 35]
+well_height = 125
+position = 0
+days = 0
+
+while position < wall_height:
+    days =+ 1
+
+#2. What is its maximum displacement in one day? And its minimum? 
+
+avance = [30, 21, 33, 77, 44, 45, 23, 45, 12, 34, 55]
+escape_time = avance[:6]
+max(escape_time)
+
+    #Solution: 77
+
+#3. What is its average progress? Take into account the snail slides at night.
+
+net_gain = [10, 1, 13, 57, 24, 25, 3, 25, -8, 14, 35]
+escape_time = net_gain[:6]
+sum(escape_time)/len(escape_time)
+
+    #Solution: 21.666
+
+#4. What is the standard deviation of its displacement? Take into account the snail slides at night. 
+
+import statistics
+std_snail = statistics.stdev(net_gain)   
+print(std_snail)
+
+    #Solution: 17.996
+    
