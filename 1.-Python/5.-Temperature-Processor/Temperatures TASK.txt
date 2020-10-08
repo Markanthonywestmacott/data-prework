@@ -1,0 +1,138 @@
+#TEMPERATURE SENSOR
+
+temperatures_C = [33, 66, 65, 0, 59, 60, 62, 64, 70, 76, 80, 81, 80, 83, 90, 79, 61, 53, 50, 49, 53, 48, 45, 39]
+
+#1. Find the minimum temperature of the day and store it in a variable.
+
+lowest = min(temperatures_C)
+
+#2. Find the maximum temperature of the day and store it in a variable.
+
+highest = max(temperatures_C)
+
+#3. Create a list with the temperatures that are greater than or equal to 70ºC. Store it in a variable.
+
+over_70 = []
+
+for i in temperatures_C:
+    if i >= 70:
+        over_70.append(i)
+
+#4. Find the average temperature of the day and store it in a variable.
+
+avg = sum(temperatures_C)/len(temperatures_C)
+
+#5. Replace the current value of the list at 3am for an estimation.
+
+temperatures_C[3] = (temperatures_C[2] + temperatures_C[3])/2
+
+    #solution: 62
+
+#6. Convert the temperatures from Celsius to Fahrenheit
+
+temperatures_F = []
+for i in temperatures_C:
+    i = (1.8*i) + 32
+    temperatures_F.append(i)
+    
+    
+#7. Make a decision! check if any of the three conditions is met
+
+avg_condition = 0
+above80_condition = 0
+over70_condition = 0
+
+if avg > 60:
+    avg_condition = "broken"
+else:
+    avg_condition = "not broken"
+
+for i in temperatures_C:    
+    if i > 80: 
+        above80_condition = "broken"
+    elif i < 80:
+        above80_condition = "not broken"
+
+if len(over_70) > 4:
+    over70_condition = "broken"
+else:
+    over70_condition = "not broken"
+
+print("The first condition was", avg_condition,", the second condition was", above80_condition,", the third was", over70_condition)
+
+    #Solution: all conditions were broken, we should replace the AC
+    
+#BONUS
+
+#1. Create a list with the hours where the temperature is greater than 70ºC.
+
+hours = []
+
+for i in range(0,24):
+    hours.append(i)
+
+over70_hours = []
+    
+for a,b in zip(hours,temperatures_C):
+    if y > 70:
+        over70_hours.append(a)
+
+#2. Check if the list you created in step 1 has more than 4 consecutive hours.
+
+consecutive_over70 = 0
+
+for i in temperatures_C: 
+    if consecutive_over70 > 4:
+        print("at least 4 consecutive readings in a rew were over 70")
+        break
+    elif i > 70:
+        consecutive_over70 += 1
+    else:
+        consecutive_over70 = 0
+    
+    #Solution: at least 4 consecutive readings were over 70
+    
+#4. Find the average value of the temperature lists (ºC and ºF). What is the relation between both average values?
+
+tC_mean = sum(temperatues_C)/len(temperatures_C)
+tF_mean = sum(temperatues_F)/len(temperatures_F)
+
+relation = 
+
+#5. Find the standard deviation of the temperature lists (ºC and ºF). What is the relation between both standard deviations?
+
+import statistics
+std_tC = statistics.stdev(temperatues_C)
+std_tF = statistics.stdev(temperatues_F)
+#BONUS
+
+#1. Create a list with the hours where the temperature is greater than 70ºC.
+
+over_70_hours = []
+
+for i in temperatures_C:
+    if i >= 70:
+        over_70.append(range[i])
+
+#2. Check if the list you created in step 1 has more than 4 consecutive hours.
+
+hours = []
+
+for i in range(0,24):
+    hours.append(i)
+    
+temperatures_tracker = dict(zip(hours, temperatures_C))
+
+hours_over70 = []
+
+
+
+for a,b in temperatures_tracker:
+    if b >= 70:
+        hours_over70.append(a)
+        
+newDict = dict()
+
+for (a, b) in temperatures_tracker:
+   if b >= 70:
+       newDict[b] = value
