@@ -1,0 +1,62 @@
+#ROCKS PAPER SCISSOR
+
+#1. Import the choice function of the random module.
+
+import random
+
+#2. Create a list 'gestures' that includes the 3 options: 'rock', 'paper' or 'scissors'. 
+
+gestures = ["rock", "paper", "scissors"]
+
+#3. Create a variable called n_rounds to store the maximum number of rounds to play in a game.
+
+n_rounds = 0
+
+#4. Create a variable called rounds_to_win to store the number of rounds that a player must win to win the game.
+
+rounds_to_win = 2
+
+#5. Create two variales cpu_score and player_score to keep track of who wins
+
+cpu_score = 0
+player_score = 0
+
+#6. Define a function that randomly returns one of the 3 gesture options.
+
+choice_cpu = random.choice(gestures)
+
+#7. Define a function that asks the player which is the gesture he or she wants to show.
+
+choice_user = input("enter gesture choice ")
+
+#8. Define a function that checks who won a round.
+
+while n_rounds < 3:
+    if choice_cpu == "rock" and choice_player == "paper":
+        player_score += 1
+        n_rounds += 1
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You win!")
+    elif choice_cpu == "rock" and choice_player == "scissors":
+        cpu_score += 1
+        n_rounds += 1
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You lose...")
+    elif choice_cpu == "paper" and choice_player == "rock":
+        cpu_score += 1
+        n_rounds += 1
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You lose...")
+    elif choice_cpu == "paper" and choice_player == "scissors":
+        player_score += 1
+        n_rounds += 1
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You win!")
+    elif choice_cpu == "scissors" and choice_player == "rock":
+        player_score += 1
+        n_rounds += 1
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You win!")
+    elif choice_cpu == "scissors" and choice_player == "paper":
+        cpu_score += 1
+        n_rounds += 1while
+        print("you chose ", choice_player,", cpu chose ", choice_cpu,". You lose...")
+    elif choice_cpu ==  choice_player:
+        print(tie!)
+else:
+    print("In this game of 3 rounds, you scored", player_score, ", and the cpu scored, ", cpu_score)
